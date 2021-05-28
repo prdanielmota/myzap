@@ -112,7 +112,16 @@ app.post("/sendFile", async (req, res, next) => {
         req.body.caption
     );
     res.json(result);
-});//sendFile
+});
+
+
+//sendMessage
+
+app.get("/message", async (req, res, next) => {
+    var result = await Sessions.sendMessageToId(req.number + '@c.us', req.query.message);
+    res.json(result);
+
+//sendFile
 
 app.post("/sendImageStorie", async (req, res, next) => {
     var result = await Sessions.sendImageStorie(
