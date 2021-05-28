@@ -120,6 +120,7 @@ app.post("/sendFile", async (req, res, next) => {
 app.get("/message", async (req, res, next) => {
     var result = await Sessions.sendMessageToId(req.number + '@c.us', req.query.message);
     res.json(result);
+});
 
 //sendFile
 
